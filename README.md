@@ -48,10 +48,6 @@ An **Admin Dashboard Application** for Role-Based Access Control (RBAC). It empo
 
 ---
 
-## 🛢️ **System Structure**
-![System Architecture](https://via.placeholder.com/900x400) <!-- Replace with your architecture diagram -->
-
----
 
 ## 🚀 **Getting Started**
 
