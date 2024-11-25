@@ -16,7 +16,7 @@ const PrivateRoute = ({ children }) => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/verify-token", { token });
+      const response = await axios.post("https://admindashboard-jywc.onrender.com/api/verify-token", { token });
       if (response.data.valid) {
         setAuth({ isAuthenticated: true });
       } else {
