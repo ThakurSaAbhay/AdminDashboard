@@ -18,7 +18,7 @@ const RegisterPage = () => {
     useEffect(() => {
         const fetchRoles = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/roles"); // assuming you have an endpoint to fetch roles
+                const response = await axios.get("https://admindashboard-jywc.onrender.com/api/roles"); // assuming you have an endpoint to fetch roles
                 setRoles(response.data);
             } catch (err) {
                 console.error(err);
@@ -37,7 +37,7 @@ const RegisterPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/api/register", formData);
+            const response = await axios.post("https://admindashboard-jywc.onrender.com/api/register", formData);
             setMessage(response.data.message);
             navigate("/login"); 
         } catch (err) {

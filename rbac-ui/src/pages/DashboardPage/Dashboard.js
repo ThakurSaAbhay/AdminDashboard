@@ -37,7 +37,7 @@ const DashboardPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/users")
+      .get("https://admindashboard-jywc.onrender.com/api/users")
       .then((response) => {
         setUsers(response.data);
         setActiveUsers(response.data.filter(user => user.status === 'active').length);
@@ -47,7 +47,7 @@ const DashboardPage = () => {
       });
 
     axios
-      .get("http://localhost:5000/api/roles")
+      .get("https://admindashboard-jywc.onrender.com/api/roles")
       .then((response) => {
         setRoles(response.data);
       })
@@ -80,7 +80,7 @@ const DashboardPage = () => {
     setIsModalOpen(false);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/roles", {
+      const response = await axios.post("https://admindashboard-jywc.onrender.com/api/roles", {
         name: roleName,
         permissions: permissions,
       });
@@ -92,7 +92,7 @@ const DashboardPage = () => {
     }
 
     axios
-      .get("http://localhost:5000/api/roles")
+      .get("https://admindashboard-jywc.onrender.com/api/roles")
       .then((response) => {
         setRoles(response.data);
       })
@@ -103,7 +103,7 @@ const DashboardPage = () => {
 
   const handleDeleteRole = async (roleId) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/roles/${roleId}`);
+      const response = await axios.delete(`https://admindashboard-jywc.onrender.com/api/roles/${roleId}`);
       toast.success(response.data.message);
       const updatedRoles = roles.filter((role) => role._id !== roleId);
       setRoles(updatedRoles);
@@ -126,7 +126,7 @@ const DashboardPage = () => {
     }
 
     try {
-      const response = await axios.put(`http://localhost:5000/api/roles/${editingRole._id}/permissions`, {
+      const response = await axios.put(`https://admindashboard-jywc.onrender.com/api/roles/${editingRole._id}/permissions`, {
         permissions,
       });
 
@@ -156,7 +156,7 @@ const DashboardPage = () => {
     setIsUserModalOpen(false);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/register", {
+      const response = await axios.post("https://admindashboard-jywc.onrender.com/api/register", {
         name: name,
         email: email,
         role: role,
@@ -168,7 +168,7 @@ const DashboardPage = () => {
     }
 
     axios
-      .get("http://localhost:5000/api/users")
+      .get("https://admindashboard-jywc.onrender.com/api/users")
       .then((response) => {
         setUsers(response.data);
       })
@@ -179,7 +179,7 @@ const DashboardPage = () => {
 
   const handleDeleteUser = async (userId) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/users/${userId}`);
+      const response = await axios.delete(`https://admindashboard-jywc.onrender.com/api/users/${userId}`);
       toast.success(response.data.message);
       const updatedUsers = users.filter((user) => user._id !== userId);
       setUsers(updatedUsers);
@@ -210,7 +210,7 @@ const DashboardPage = () => {
   };
   const handleEditUser = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/users/${editingUser._id}/status-role`, {
+      const response = await axios.put(`https://admindashboard-jywc.onrender.com/api/users/${editingUser._id}/status-role`, {
         role,
         status,
       });
