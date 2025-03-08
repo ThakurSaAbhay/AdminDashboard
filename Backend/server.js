@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://thakursaabhay:abhay@abhaycluster.43q1x.mongodb.net/rbac_d")
+mongoose.connect("your_mongo_uri")
 .then(() => console.log("MongoDB connected"))
 .catch((err) => {
     console.error("Database connection error:", err);
